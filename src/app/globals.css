@@ -1,19 +1,145 @@
+/* Pretendard 글꼴 (CDN). @import url은 반드시 맨 위에 있어야 한다 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 @import "tailwindcss";
 @source not "../../.claude";
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+  /* ===== 색상 (Figma color/* 변수) ===== */
+  --color-surface-default: #ffffff;
+  --color-surface-subtle: #f3f4f6;
+  --color-surface-inverse: #1f2937;
+  --color-background-subtle: #f9fafb;
+
+  --color-text-strong: #000000;
+  --color-text-primary: #131313;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary: #66707a;
+  --color-text-disabled: #a0a2a3;
+  --color-text-inverse: #ffffff;
+
+  --color-border-default: #e5e7eb;
+  --color-border-subtle: #e7e7e8;
+  --color-border-accent: #1f3dbc;
+  --color-border-on-dark: #ffffff33;
+
+  --color-action-primary: #536dfe;
+  --color-action-secondary: #297eff;
+  --color-action-hover-overlay: #1f3dbcb2;
+
+  --color-info-soft: #74aafb;
+  --color-info-subtle: #dceafe;
+  --color-info-strong: #00378a;
+
+  --color-feedback-error: #d90000;
+
+  --color-preview-neutral-800: #5e5e5e;
+
+  /* ===== 간격 =====
+     --spacing을 1px로 두면 숫자가 곧 px이 된다. (p-16 = 16px, gap-24 = 24px)
+     아래 이름 있는 간격은 Figma spacing/* 변수 (예: px-page-horizontal = 20px) */
+  --spacing: 1px;
+  --spacing-none: 0px;
+  --spacing-inline-xs: 2px;
+  --spacing-inline-sm: 4px;
+  --spacing-compact-detail: 5px;
+  --spacing-inline-compact: 6px;
+  --spacing-inline-md: 8px;
+  --spacing-control-y: 8px;
+  --spacing-control-compact: 10px;
+  --spacing-control-x: 12px;
+  --spacing-stack-sm: 12px;
+  --spacing-preview-body-compact: 15px;
+  --spacing-stack-md: 16px;
+  --spacing-preview-heading: 18px;
+  --spacing-page-horizontal: 20px;
+  --spacing-stack-lg: 24px;
+  --spacing-preview-title: 25px;
+  --spacing-preview-display: 26px;
+  --spacing-stack-xl: 28px;
+  --spacing-section: 32px;
+  --spacing-section-lg: 40px;
+  --spacing-section-xl: 60px;
+  --spacing-cover-inset: 80px;
+
+  /* ===== 모서리 (Figma radius/* 변수) ===== */
+  --radius-none: 0px;
+  --radius-button: 6px;
+  --radius-control: 8px;
+  --radius-media: 12px;
+  --radius-scaled-media: 16.8px; /* Figma radius/scaled-media (Image flag) */
+  --radius-card: 20px;
+  --radius-cover: 32px;
+  --radius-pill: 999px;
+
+  /* ===== 글꼴 ===== */
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ===== 텍스트 스타일 (Figma Typography/* 스타일, 글꼴은 Pretendard) ===== */
+@utility text-display-lg {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+@utility text-title-lg {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+@utility text-heading-lg {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+@utility text-heading-md {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+@utility text-label-lg {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+@utility text-label-md {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+@utility text-body-lg {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+@utility text-body-compact {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+@utility text-body-md {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+@utility text-caption-md {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
+/* ===== 기본 화면 ===== */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface-default);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
 }

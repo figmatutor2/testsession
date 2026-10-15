@@ -1,0 +1,1 @@
+- [Figma 디자인 시스템 원본](reference_figma_design_system.md) — 토큰 원본 fileKey/nodeId, 제외한 guide/preserved 변수
